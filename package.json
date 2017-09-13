@@ -17,6 +17,7 @@
         "lodash": "^4.17.4",
         "vue": "^2.1.10",
 
+        "bootstrap": "^4.0.0-beta",
         "bootstrap-vue": "^0.23.0",
         "chart.js": "2.6.0",
         "vue-chartjs": "2.8.2",

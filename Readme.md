@@ -6,7 +6,7 @@ It is the same idea as [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](h
 however in this version we're using Laravel 5.5 and instead of copying CoreUI files directly into `/resources/assets` and `assets/js`,
 the main CoreUI files are all contained in `/resources/coreui` while public files go to `/public/static`
 
-Unfortunately Bootstrap 4 has been bundled into CoreUI (TODO: Fix this!).  We specify font-awesome and simple-line-icons package dependencies rather than using the CoreUI bundled versions.
+We also specify Bootstrap 4, font-awesome and simple-line-icons package dependencies rather than using the CoreUI bundled versions.
 
 ## Getting Started
 
@@ -86,6 +86,7 @@ Run `composer update` to add these packages.  At this point the CoreUI files sho
 
 In package.json, remove the `bootstrap-sass` line & add devDependencies:
 
+    "bootstrap": "^4.0.0-beta",
     "bootstrap-vue": "^0.23.0",
     "chart.js": "2.6.0",
     "vue-chartjs": "2.8.2",
@@ -123,8 +124,21 @@ In `/resources/assets/sass/app.scss` comment out bootstrap and add in our packag
     // CoreUI Style
     @import "../../coreui/scss/style";
 
+
+#### 6. Change bootstrap import
+
+In `resources/coreui/scss/style.scss` change the bundled CoreUI bootstrap to our external one:
+
+    // Import Bootstrap source files
+    //@import "bootstrap/bootstrap";
     
-#### 6. Add route & view for CoreUI
+    // If you want you can import bootstrap scss files directly from node_modules or bower_components.
+    // To do this please remove @import "bootstrap/bootstrap"; and uncomment proper line.
+    
+    // Import Bootstrap source files from node_modules
+    @import "node_modules/bootstrap/scss/bootstrap";
+
+#### 7. Add route & view for CoreUI
 
 In `routes/web.php`, comment out the welcome route and add a coreui route:
 
@@ -186,7 +200,7 @@ Add a new view in `resources/views/coreui.blade.php`:
     </body>
     </html>
 
-#### 7. Use the CoreUI JS
+#### 8. Use the CoreUI JS
 
 In `resources/assets/js/app.js` comment out everything and add:
 
@@ -215,7 +229,7 @@ In `resources/assets/js/app.js` comment out everything and add:
     
     require('../../coreui/src/main.js');
 
-#### 8. Fix Paths
+#### 9. Fix Paths
 
 Run Mix tasks, copying over CoreUI files:
 
@@ -238,7 +252,7 @@ In `/resources/coreui/src/App.vue`, update the import to:
       @import "../scss/style";
     </style>
 
-#### 9. Use Vue-router History mode rather than Hash
+#### 10. Use Vue-router History mode rather than Hash
 
 To eliminate those annoying '#' symbols from the browser URL, 
 in `/resource/coreui/src/router/index.js` change mode from 'hash' to 'history':
@@ -248,7 +262,7 @@ in `/resource/coreui/src/router/index.js` change mode from 'hash' to 'history':
 
 More information: [HTML5 History Mode](https://router.vuejs.org/en/essentials/history-mode.html)
 
-#### 10. Comment out the CoreUI mix copies
+#### 11. Comment out the CoreUI mix copies
 
 To eliminate overwriting these changes, comment out the copies in `webpack.mix.js`:
 
@@ -260,7 +274,7 @@ To eliminate overwriting these changes, comment out the copies in `webpack.mix.j
         .copyDirectory(coreui_vendor + '/src', 'resources/coreui/src');
     */
 
-#### 11. Run Mix and Serve
+#### 12. Run Mix and Serve
 
 At this point, running the following should not have any errors:
 
