@@ -6,7 +6,7 @@ It is the same idea as [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](h
 however in this version we're using Laravel 5.5 and instead of copying CoreUI files directly into `/resources/assets` and `assets/js`,
 the main CoreUI files are all contained in `/resources/coreui` while public files go to `/public/static`
 
-Unfortunately Bootstrap 4 has been bundled into CoreUI.  We specify font-awesome and simple-line-icons package dependencies rather than using the CoreUI bundled versions.
+Unfortunately Bootstrap 4 has been bundled into CoreUI (TODO: Fix this!).  We specify font-awesome and simple-line-icons package dependencies rather than using the CoreUI bundled versions.
 
 ## Getting Started
 
@@ -245,6 +245,8 @@ in `/resource/coreui/src/router/index.js` change mode from 'hash' to 'history':
 
     export default new Router({
       mode: 'history', // Demo is living in GitHub.io, so required!
+
+More information: [HTML5 History Mode](https://router.vuejs.org/en/essentials/history-mode.html)
 
 #### 10. Comment out the CoreUI mix copies
 
