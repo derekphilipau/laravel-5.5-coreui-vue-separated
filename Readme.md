@@ -12,7 +12,34 @@ Unfortunately Bootstrap 4 has been bundled into CoreUI.  We specify font-awesome
 
 You can either download the repository directly or follow the instructions here to make your own fresh install.
 
-### Clean Install
+### Install from repository
+
+Download & unpack the files, navigate to the directory and run:
+
+    composer install
+
+After it has completed, run:
+
+    npm install
+    
+Copy the example .env file:
+    
+    cp .env.example .env
+
+Generate an application key:
+
+    php artisan key:generate
+
+Run Mix tasks:
+
+    npm run dev
+
+View the website:
+
+    php artisan serve
+
+
+### Step-by-step Clean Install
 
 #### 1. Install Laravel
 
