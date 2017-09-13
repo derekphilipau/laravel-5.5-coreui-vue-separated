@@ -6,7 +6,7 @@ It is the same idea as [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](h
 however in this version we're using Laravel 5.5 and instead of copying CoreUI files directly into `/resources/assets` and `assets/js`,
 the main CoreUI files are all contained in `/resources/coreui` while public files go to `/public/static`
 
-Unfortunately Bootstrap 4 has been bundled into CoreUI.  We specify font-awesome & simple-line-icons package dependencies rather than using the CoreUI bundled versions.
+Unfortunately Bootstrap 4 has been bundled into CoreUI.  We specify font-awesome and simple-line-icons package dependencies rather than using the CoreUI bundled versions.
 
 ## Getting Started
 
@@ -21,7 +21,8 @@ You can either download the repository directly or follow the instructions here 
     php artisan key:generate
     php artisan serve
 
-
+At this point you should be able to see the familiar Laravel welcome screen in your browser.
+For more information, see [Laravel 5.5 Installation](https://laravel.com/docs/5.5/installation)
 
 #### 2. Add CoreUI-Vue repository
 
@@ -52,6 +53,8 @@ And then require it:
         "mrholek/CoreUI-Vue": "dev-master"
     },
 
+Run `composer update` to add these packages.  At this point the CoreUI files should be in `vendor/mrholek/CoreUI-Vue/`
+
 #### 3. Add Dependencies
 
 In package.json, remove the `bootstrap-sass` line & add devDependencies:
@@ -63,7 +66,7 @@ In package.json, remove the `bootstrap-sass` line & add devDependencies:
     "font-awesome": "^4.7.0",
     "simple-line-icons": "^2.4.1"
 
-Run `composer update` to add these packages.
+Run `npm update`
 
 #### 4. Add CoreUI files to Mix
 
@@ -74,30 +77,25 @@ In `webpack.mix.js`:
     mix.copyDirectory(coreui_vendor + '/static/img', 'public/static/img')
         .copyDirectory(coreui_vendor + '/scss', 'resources/coreui/scss')
         .copyDirectory(coreui_vendor + '/src', 'resources/coreui/src');
-
-
+        
+    mix.js('resources/assets/js/app.js', 'public/js')
+       .sass('resources/assets/sass/app.scss', 'public/css');    
 
 #### 5. Update CoreUI app
 
-In `/resources/assets/sass/app.scss` add in our package fonts (instead of CoreUI bundled fonts).
+In `/resources/assets/sass/app.scss` comment out bootstrap and add in our package fonts (instead of CoreUI bundled fonts).
+
+    // Bootstrap
+    // Commented out as CoreUI already contains bootstrap
+    //@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
     // Fonts
     @import "~font-awesome/scss/font-awesome"; // Font Awesome
     @import "~simple-line-icons/scss/simple-line-icons"; // Simple Line Icons
-
-Comment out bootstrap (it's already included by CoreUI):
-
-    // Bootstrap Comment out
-    //@import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
-Add in the CoreUI bootstrap and style:
-
-    // Bootstrap - unfortunate, but use CoreUI bootstraps.
-    // TODO: replace w/ regular bootstrap
-    @import "coreui/bootstrap";
     
     // CoreUI Style
     @import "../../coreui/scss/style";
+
     
 #### 6. Add route & view for CoreUI
 
@@ -165,7 +163,29 @@ Add a new view in `resources/views/coreui.blade.php`:
 
 In `resources/assets/js/app.js` comment out everything and add:
 
-    // Include CoreUI JS
+    /**
+     * First we will load all of this project's JavaScript dependencies which
+     * includes Vue and other libraries. It is a great starting point when
+     * building robust, powerful web applications using Vue and Laravel.
+     */
+    /*
+    require('./bootstrap');
+    
+    window.Vue = require('vue');
+    */
+    /**
+     * Next, we will create a fresh Vue application instance and attach it to
+     * the page. Then, you may begin adding components to this application
+     * or customize the JavaScript scaffolding to fit your unique needs.
+     */
+    /*
+    Vue.component('example', require('./components/Example.vue'));
+    
+    const app = new Vue({
+        el: '#app'
+    });
+    */
+    
     require('../../coreui/src/main.js');
 
 #### 8. Fix Paths
@@ -221,7 +241,5 @@ At this point, running the following should not have any errors:
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Similar project: [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](https://github.com/Braunson/laravel-coreui-vue)
 
