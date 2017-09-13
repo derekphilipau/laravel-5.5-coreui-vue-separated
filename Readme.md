@@ -2,8 +2,7 @@
 
 A clean install of Laravel 5.5 with the [CoreUI Full Bootstrap Admin Template VueJS Version](https://github.com/mrholek/CoreUI-Vue) added in. 
 
-It is the same idea as [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](https://github.com/Braunson/laravel-coreui-vue), 
-however in this version we're using Laravel 5.5 and instead of copying CoreUI files directly into `/resources/assets` and `assets/js`,
+Based on [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](https://github.com/Braunson/laravel-coreui-vue), however in this version we're using Laravel 5.5 and instead of copying CoreUI files directly into `/resources/assets` and `assets/js`,
 the main CoreUI files are all contained in `/resources/coreui` while public files go to `/public/static`
 
 We also specify Bootstrap 4, font-awesome and simple-line-icons package dependencies rather than using the CoreUI bundled versions.
@@ -296,5 +295,5 @@ At this point, running the following should not have any errors:
 
 ## Acknowledgments
 
-* Similar project: [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](https://github.com/Braunson/laravel-coreui-vue)
+* Based on: [Laravel 5.4 with CoreUI (VueJS Full Starter Template)](https://github.com/Braunson/laravel-coreui-vue)
 
