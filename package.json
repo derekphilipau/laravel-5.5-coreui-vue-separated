@@ -11,16 +11,16 @@
   },
   "devDependencies": {
         "axios": "^0.16.2",
-        "cross-env": "^5.0.1",
-        "jquery": "^3.1.1",
-        "laravel-mix": "^1.0",
+        "cross-env": "^5.0.5",
+        "jquery": "^3.2.1",
+        "laravel-mix": "^1.4",
         "lodash": "^4.17.4",
-        "vue": "^2.1.10",
+        "vue": "^2.4.4",
 
         "bootstrap": "^4.0.0-beta",
-        "bootstrap-vue": "^0.23.0",
-        "chart.js": "2.6.0",
-        "vue-chartjs": "2.8.2",
+        "bootstrap-vue": "^1.0.0-beta.7",
+        "chart.js": "2.7.0",
+        "vue-chartjs": "2.8.6",
         "vue-router": "2.7.0",
         "font-awesome": "^4.7.0",
         "simple-line-icons": "^2.4.1"
