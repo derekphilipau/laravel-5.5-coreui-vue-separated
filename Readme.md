@@ -7,6 +7,20 @@ the main CoreUI files are all contained in `/resources/coreui` while public file
 
 We also specify Bootstrap 4, font-awesome and simple-line-icons package dependencies rather than using the CoreUI bundled versions.
 
+## Contents
+- [Getting Started](#getting-started)
+	- [Install from repository](#install-from-repository)
+    - [Step-by-step Clean Install](#step-by-step-clean-install)
+        - [1. Install Laravel](#1-install-laravel)
+        - [2. Add CoreUI-Vue repository](#2-add-coreui-vue-repository)
+        - [3. Add Dependencies](#3-add-dependencies)
+        - [4. Add CoreUI files to Mix](#4-add-coreui-files-to-mix)
+        - [5. Update CoreUI app](#5-update-coreui-app)
+        - [6. Change bootstrap import](#6-change-bootstrap-import)
+        - [7. Add route & view for CoreUI](#7-add-route--view-for-coreui)
+        - [8. Use the CoreUI JS](#8-use-the-coreui-js)
+        - [9. Fix Paths](#9-fix-paths)
+
 ## Getting Started
 
 You can either download the repository directly or follow the instructions here to make your own fresh install.
