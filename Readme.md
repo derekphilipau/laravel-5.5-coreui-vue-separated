@@ -100,9 +100,9 @@ Run `composer update` to add these packages.  At this point the CoreUI files sho
 In package.json, remove the `bootstrap-sass` line & add devDependencies:
 
     "bootstrap": "^4.0.0-beta",
-    "bootstrap-vue": "^0.23.0",
-    "chart.js": "2.6.0",
-    "vue-chartjs": "2.8.2",
+    "bootstrap-vue": "^1.0.0-beta.9",
+    "chart.js": "2.7.0",
+    "vue-chartjs": "2.8.6",
     "vue-router": "2.7.0",
     "font-awesome": "^4.7.0",
     "simple-line-icons": "^2.4.1"
