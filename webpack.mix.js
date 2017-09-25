@@ -13,10 +13,12 @@ let mix = require('laravel-mix');
 
 // Copy over the CoreUI Assets into separate coreui directories
 var coreui_vendor = 'vendor/mrholek/CoreUI-Vue/Vue_Full_Project';
+
 /*
 mix.copyDirectory(coreui_vendor + '/static/img', 'public/static/img')
     .copyDirectory(coreui_vendor + '/scss', 'resources/coreui/scss')
     .copyDirectory(coreui_vendor + '/src', 'resources/coreui/src');
 */
+
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
